@@ -1,0 +1,68 @@
+CREATE TABLE Departments_ (
+    DepartmentID INT PRIMARY KEY,
+    Name VARCHAR2(100) NOT NULL
+);
+
+
+CREATE TABLE Doctors (
+    DoctorID INT PRIMARY KEY,
+    FirstName VARCHAR2(50),
+    LastName VARCHAR2(50),
+    Email VARCHAR2(100),
+    Phone VARCHAR2(15),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments_(DepartmentID)
+);
+
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    Title VARCHAR2(100) NOT NULL,
+    Credits INT,
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments_(DepartmentID)
+);
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR2(50),
+    LastName VARCHAR2(50),
+    Email VARCHAR2(100),
+    Phone VARCHAR2(15),
+    EnrollmentDate DATE
+);
+
+
+CREATE TABLE Schedules (
+    ScheduleID INT PRIMARY KEY,
+    CourseID INT,
+    DoctorID INT,
+    Room VARCHAR2(50),
+    DayOfWeek VARCHAR2(10),
+    StartTime TIMESTAMP,
+    EndTime TIMESTAMP,
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID)
+);
+
+
+CREATE TABLE Evaluations (
+    EvaluationID INT PRIMARY KEY,
+    CourseID INT,
+    DoctorID INT,
+    StudentID INT,
+    Rating INT CHECK (Rating >= 1 AND Rating <= 5),
+    Comments VARCHAR2(500),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID),
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
+);
+
+
+CREATE TABLE StudentEnrollments (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    EnrollmentDate DATE,
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);

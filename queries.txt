@@ -1,0 +1,63 @@
+1. Retrieve all departments along with the total number of doctors in each department:
+SELECT Departments_.*, TotalDoctors.Total
+FROM Departments_
+LEFT JOIN (
+    SELECT DepartmentID, COUNT(DoctorID) AS Total
+    FROM Doctors
+    GROUP BY DepartmentID
+) TotalDoctors ON Departments_.DepartmentID = TotalDoctors.DepartmentID;
+
+2. Retrieve all courses along with the department name for each course:
+SELECT Courses.*, Departments_.Name AS DepartmentName
+FROM Courses
+JOIN Departments_ ON Courses.DepartmentID = Departments_.DepartmentID;
+
+3. Retrieve the courses with the highest number of enrolled students along with the count of enrolled students:
+SELECT CourseID, COUNT(StudentID) AS EnrolledStudents
+FROM StudentEnrollments
+GROUP BY CourseID
+ORDER BY EnrolledStudents DESC;
+
+4. Retrieve all evaluations along with the doctor's full name and the course title:
+SELECT Evaluations.*, Doctors.FirstName || ' ' || Doctors.LastName AS DoctorFullName, Courses.Title AS CourseTitle
+FROM Evaluations
+JOIN Doctors ON Evaluations.DoctorID = Doctors.DoctorID
+JOIN Courses ON Evaluations.CourseID = Courses.CourseID;
+
+5. Retrieve all students who haven't enrolled in any course:
+SELECT Students.*
+FROM Students
+WHERE StudentID NOT IN (SELECT StudentID FROM StudentEnrollments);
+
+6. Retrieve the courses offered by the Medicine department along with the number of enrolled students for each course:
+SELECT Courses.*, COUNT(StudentEnrollments.StudentID) AS EnrolledStudents
+FROM Courses
+LEFT JOIN StudentEnrollments ON Courses.CourseID = StudentEnrollments.CourseID
+WHERE Courses.DepartmentID = 2
+GROUP BY Courses.CourseID, Courses.Title, Courses.Credits, Courses.DepartmentID;
+
+7. Retrieve all evaluations with ratings above 3 along with the course title and the student's full name:
+SELECT Evaluations.*, Courses.Title AS CourseTitle, Students.FirstName || ' ' || Students.LastName AS StudentFullName
+FROM Evaluations
+JOIN Courses ON Evaluations.CourseID = Courses.CourseID
+JOIN Students ON Evaluations.StudentID = Students.StudentID
+WHERE Evaluations.Rating > 3;
+
+8. Retrieve the average rating of each doctor along with their full name:
+SELECT Doctors.DoctorID, Doctors.FirstName || ' ' || Doctors.LastName AS DoctorFullName, AVG(Evaluations.Rating) AS AvgRating
+FROM Doctors
+LEFT JOIN Evaluations ON Doctors.DoctorID = Evaluations.DoctorID
+GROUP BY Doctors.DoctorID, Doctors.FirstName || ' ' || Doctors.LastName;
+
+9. Retrieve all schedules for courses taught by doctors in the Psychology department:
+SELECT Schedules.*, Courses.Title AS CourseTitle, Doctors.FirstName || ' ' || Doctors.LastName AS DoctorFullName
+FROM Schedules
+JOIN Courses ON Schedules.CourseID = Courses.CourseID
+JOIN Doctors ON Schedules.DoctorID = Doctors.DoctorID
+WHERE Doctors.DepartmentID = 7;
+
+10. Retrieve all courses with no evaluations along with the department name for each course:
+SELECT Courses.*, Departments_.Name AS DepartmentName
+FROM Courses
+JOIN Departments_ ON Courses.DepartmentID = Departments_.DepartmentID
+WHERE Courses.CourseID NOT IN (SELECT CourseID FROM Evaluations);

@@ -1,0 +1,96 @@
+INSERT ALL 
+INTO Departments_ (DepartmentID, Name) VALUES (1, 'Computer Science')
+INTO Departments_ (DepartmentID, Name) VALUES (2, 'Medicine')
+INTO Departments_ (DepartmentID, Name) VALUES (3, 'Business Administration')
+INTO Departments_ (DepartmentID, Name) VALUES (4, 'Engineering')
+INTO Departments_ (DepartmentID, Name) VALUES (5, 'English')
+INTO Departments_ (DepartmentID, Name) VALUES (6, 'Mathematics')
+INTO Departments_ (DepartmentID, Name) VALUES (7, 'Psychology')
+INTO Departments_ (DepartmentID, Name) VALUES (8, 'History')
+INTO Departments_ (DepartmentID, Name) VALUES (9, 'Art')
+INTO Departments_ (DepartmentID, Name) VALUES (10, 'Biology')
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (1, 'John', 'Smith', 'john.smith@example.com', '123-456-7890', 2)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (2, 'Emily', 'Johnson', 'emily.johnson@example.com', '987-654-3210', 2)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (3, 'Michael', 'Williams', 'michael.williams@example.com', '555-555-5555', 2)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (4, 'Jessica', 'Brown', 'jessica.brown@example.com', '111-222-3333', 2)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (5, 'David', 'Jones', 'david.jones@example.com', '444-444-4444', 3)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (6, 'Sarah', 'Davis', 'sarah.davis@example.com', '666-666-6666', 3)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (7, 'Daniel', 'Miller', 'daniel.miller@example.com', '777-777-7777', 1)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (8, 'Lisa', 'Wilson', 'lisa.wilson@example.com', '888-888-8888', 1)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (9, 'Robert', 'Taylor', 'robert.taylor@example.com', '999-999-9999', 3)
+INTO Doctors (DoctorID, FirstName, LastName, Email, Phone, DepartmentID) VALUES (10, 'Jennifer', 'Martinez', 'jennifer.martinez@example.com', '000-000-0000', 4)
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (1, 'Introduction to Programming', 3, 1)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (2, 'Anatomy and Physiology', 4, 2)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (3, 'Marketing Principles', 3, 3)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (4, 'Mechanical Engineering Fundamentals', 4, 4)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (5, 'English Composition', 3, 5)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (6, 'Calculus I', 4, 6)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (7, 'Introduction to Psychology', 3, 7)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (8, 'World History', 3, 8)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (9, 'Art History', 3, 9)
+INTO Courses (CourseID, Title, Credits, DepartmentID) VALUES (10, 'Cell Biology', 4, 10)
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (1, 'Emma', 'Johnson', 'emma.johnson@example.com', '123-456-7890', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (2, 'Matthew', 'Williams', 'matthew.williams@example.com', '987-654-3210', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (3, 'Olivia', 'Brown', 'olivia.brown@example.com', '555-555-5555', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (4, 'Daniel', 'Smith', 'daniel.smith@example.com', '111-222-3333', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (5, 'Sophia', 'Jones', 'sophia.jones@example.com', '444-444-4444', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (6, 'Alexander', 'Davis', 'alexander.davis@example.com', '666-666-6666', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (7, 'Mia', 'Miller', 'mia.miller@example.com', '777-777-7777', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (8, 'Ethan', 'Wilson', 'ethan.wilson@example.com', '888-888-8888', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (9, 'Charlotte', 'Taylor', 'charlotte.taylor@example.com', '999-999-9999', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO Students (StudentID, FirstName, LastName, Email, Phone, EnrollmentDate) VALUES (10, 'Liam', 'Martinez', 'liam.martinez@example.com', '000-000-0000', TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (1, 1, 1, 'Room A', 'Monday', TO_TIMESTAMP('08:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('10:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (2, 2, 2, 'Room B', 'Tuesday', TO_TIMESTAMP('09:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('11:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (3, 3, 3, 'Room C', 'Wednesday', TO_TIMESTAMP('10:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('12:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (4, 4, 4, 'Room D', 'Thursday', TO_TIMESTAMP('11:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('13:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (5, 5, 5, 'Room E', 'Friday', TO_TIMESTAMP('12:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('14:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (6, 6, 6, 'Room F', 'Monday', TO_TIMESTAMP('13:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('15:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (7, 7, 7, 'Room G', 'Tuesday', TO_TIMESTAMP('14:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('16:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (8, 8, 8, 'Room H', 'Wednesday', TO_TIMESTAMP('15:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('17:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (9, 9, 9, 'Room I', 'Thursday', TO_TIMESTAMP('16:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('18:00:00', 'HH24:MI:SS'))
+INTO Schedules (ScheduleID, CourseID, DoctorID, Room, DayOfWeek, StartTime, EndTime) VALUES (10, 10, 10, 'Room J', 'Friday', TO_TIMESTAMP('17:00:00', 'HH24:MI:SS'), TO_TIMESTAMP('19:00:00', 'HH24:MI:SS'))
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (1, 1, 1, 1, 4, 'Great course overall.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (2, 2, 2, 2, 5, 'The instructor was very knowledgeable.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (3, 3, 3, 3, 3, 'The course material could be more engaging.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (4, 4, 4, 4, 4, 'Enjoyed the hands-on projects.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (5, 5, 5, 5, 4, 'Challenging but rewarding.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (6, 6, 6, 6, 5, 'Excellent teaching style.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (7, 7, 7, 7, 3, 'Expected more interaction in class.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (8, 8, 8, 8, 4, 'Interesting content.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (9, 9, 9, 9, 5, 'Instructor provided valuable insights.')
+INTO Evaluations (EvaluationID, CourseID, DoctorID, StudentID, Rating, Comments) VALUES (10, 10, 10, 10, 4, 'Would recommend to others.')
+SELECT * FROM dual;
+
+
+INSERT ALL 
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (1, 1, 1, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (2, 2, 2, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (3, 3, 3, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (4, 4, 4, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (5, 5, 5, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (6, 6, 6, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (7, 7, 7, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (8, 8, 8, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (9, 9, 9, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+INTO StudentEnrollments (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (10, 10, 10, TO_DATE('2023-09-01', 'YYYY-MM-DD'))
+SELECT * FROM dual;
